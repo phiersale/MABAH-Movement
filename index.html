@@ -3,1099 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHIERS | MABAH: Making America Better And Healthier - On Our Terms</title>
+    <title>MABAH Movement - Making America Better And Healthier</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-header {
-            text-align: right;
-            font-size: 0.9rem;
-        }
-
-        .contact-header a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .hero .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            background: rgba(255,255,255,0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero .crisis-list {
-            font-size: 1.1rem;
-            margin: 1.5rem 0;
-            line-height: 1.8;
-        }
-
-        .hero .solution {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 2rem 0 1rem 0;
-            background: rgba(255,255,255,0.3);
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        /* CTA Buttons */
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 2rem 0;
-        }
-
-        .cta-card {
-            background: white;
-            color: #1a1a1a;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .cta-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .cta-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .cta-card p {
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #667eea;
-        }
-
-        /* Sections */
-        section {
-            padding: 4rem 0;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #1e3c72;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Video Section */
-        .video-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .video-section h2 {
-            color: white;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: rgba(0,0,0,0.3);
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .video-placeholder {
-            background: rgba(0,0,0,0.5);
-            padding: 4rem 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-
-        .video-placeholder h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .video-cta {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        /* Validation Section */
-        .validation {
-            background: white;
-        }
-
-        .validation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
-        }
-
-        .validation-item {
-            padding: 2rem;
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-            border-radius: 10px;
-            border-left: 4px solid #00acc1;
-        }
-
-        .validation-item h3 {
-            color: #00695c;
-            margin-bottom: 1rem;
-        }
-
-        /* People vs Elites */
-        .people-power {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-
-        .comparison-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .comparison-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .comparison-card.not {
-            border-left: 4px solid #f44336;
-        }
-
-        .comparison-card.not h3 {
-            color: #f44336;
-        }
-
-        .comparison-card.is {
-            border-left: 4px solid #4caf50;
-        }
-
-        .comparison-card.is h3 {
-            color: #4caf50;
-        }
-
-        .comparison-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .comparison-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .comparison-card.not li:before {
-            content: "❌";
-            position: absolute;
-            left: 0;
-        }
-
-        .comparison-card.is li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #4caf50;
-            font-weight: bold;
-        }
-
-        .leverage-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .leverage-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Engine Section */
-        .engine {
-            background: white;
-        }
-
-        .engine-visual {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .engine-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 2rem 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .arrow {
-            font-size: 2rem;
-            color: #4caf50;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 2rem;
-        }
-
-        .solution-pill {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem;
-            border-radius: 25px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* For Leaders Section */
-        .for-leaders {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        }
-
-        .leader-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 2rem;
-        }
-
-        .leader-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .leader-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .leader-card p {
-            margin-bottom: 1rem;
-            color: #555;
-        }
-
-        .coalition-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .coalition-box h3 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Urgency Section */
-        .urgency {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
-            color: white;
-        }
-
-        .urgency h2 {
-            color: white;
-        }
-
-        .crisis-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 2rem;
-        }
-
-        .crisis-card {
-            background: rgba(255,255,255,0.95);
-            color: #1a1a1a;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b6b;
-        }
-
-        .crisis-card h3 {
-            color: #ff6b6b;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .response-box {
-            background: rgba(255,255,255,0.2);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .response-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .response-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .response-box li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.1rem;
-        }
-
-        .response-box li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        /* Resources Section */
-        .resources {
-            background: white;
-        }
-
-        .resource-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-
-        .resource-category {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #1976d2;
-        }
-
-        .resource-category h3 {
-            color: #0d47a1;
-            margin-bottom: 1.5rem;
-        }
-
-        .resource-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .resource-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .resource-list li:last-child {
-            border-bottom: none;
-        }
-
-        .resource-list a {
-            color: #1976d2;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .resource-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            color: white;
-        }
-
-        .final-cta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 2rem;
-        }
-
-        .final-cta-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .final-cta-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        /* Responsive */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        
+        .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8b0000 100%);
+            color: white; padding: 80px 40px; text-align: center;
+        }
+        
+        .header h1 { font-size: 3em; margin-bottom: 20px; }
+        .tagline { font-size: 1.4em; opacity: 0.95; margin-bottom: 15px; }
+        .subtitle { font-size: 1.1em; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        .section { margin-bottom: 50px; }
+        .section h2 { font-size: 2em; color: #c0392b; margin-bottom: 20px; border-bottom: 3px solid #c0392b; padding-bottom: 10px; }
+        
+        .crisis-box {
+            background: #fff3cd; border-left: 5px solid #ffc107; padding: 25px;
+            margin: 20px 0; border-radius: 5px;
+        }
+        
+        .math-highlight {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white; padding: 30px; border-radius: 8px; margin: 30px 0; text-align: center;
+        }
+        
+        .math-highlight .big-number { font-size: 2.5em; font-weight: bold; margin: 15px 0; }
+        
+        .engine-box {
+            background: #e8f4f8; padding: 30px; border-radius: 8px; margin: 30px 0;
+            border-left: 5px solid #1a5490;
+        }
+        
+        .roles-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;
+        }
+        
+        .role-box {
+            background: white; padding: 25px; border-radius: 8px; border: 2px solid #ecf0f1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .role-box h3 { color: #c0392b; margin-bottom: 15px; font-size: 1.1em; }
+        
+        .cta-button {
+            display: inline-block; background: #c0392b; color: white;
+            padding: 12px 30px; border-radius: 8px; text-decoration: none;
+            font-weight: bold; margin: 10px 5px; transition: background 0.3s;
+        }
+        
+        .cta-button:hover { background: #8b0000; }
+        
+        .primary-cta {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white; padding: 40px; border-radius: 8px; text-align: center;
+            margin: 40px 0;
+        }
+        
+        .primary-cta h2 { color: white; border: none; margin-bottom: 20px; }
+        
+        .resources-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;
+        }
+        
+        .resource-box {
+            background: white; padding: 25px; border-radius: 8px; border-top: 4px solid #c0392b;
+        }
+        
+        .resource-box h3 { color: #c0392b; margin-bottom: 15px; }
+        .resource-box ul { margin-left: 20px; }
+        .resource-box li { margin-bottom: 10px; }
+        
+        .footer {
+            background: #2c3e50; color: white; padding: 30px; text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer a { color: #3498db; text-decoration: none; }
+        
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .cta-grid,
-            .validation-grid,
-            .comparison-grid,
-            .leader-cards,
-            .crisis-cards,
-            .resource-categories,
-            .final-cta-grid {
-                grid-template-columns: 1fr;
-            }
+            .header h1 { font-size: 2em; }
+            .roles-grid { grid-template-columns: 1fr; }
+            .resources-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-<!-- Header -->
-<header>
-    <div class="container">
-        <div class="header-content">
-            <a href="#" class="logo">PHIERS.org</a>
-            <div class="contact-header">
-                <a href="mailto:wdprice@phiers.org">wdprice@phiers.org</a>
-                <a href="tel:+13013907657">(301) 390-7657</a>
-            </div>
-        </div>
+    <div class="header">
+        <img src="PHIERS_Logo.png" alt="PHIERS" style="max-width: 250px; margin-bottom: 20px;">
+        <h1>MABAH</h1>
+        <div class="tagline">MAKING AMERICA BETTER AND HEALTHIER</div>
+        <div class="subtitle">On OUR Terms. Not the Elites'.</div>
     </div>
-</header>
 
-<!-- Hero Section -->
-<section class="hero">
     <div class="container">
-        <h1>MABAH: MAKING AMERICA BETTER AND HEALTHIER</h1>
-        <p class="subtitle">On OUR Terms. Not the Elites'.</p>
-        
-        <div class="tagline">
-            Project 2025 and DOGE broke 9 systems.<br>
-            Democrats have no solution with teeth.<br>
-            Republicans have concepts on napkins.<br>
-            <strong>We have the mathematical weapon to fix ALL of it.</strong>
-        </div>
-
-        <div class="crisis-list">
-            <strong>PHIERS delivers $2.73 TRILLION in savings while solving 9 interconnected crises:</strong><br>
-            Healthcare • Jobs • SNAP • Economy • Justice • Political Power<br>
-            Community • Crisis Response • Infrastructure
-        </div>
-
-        <div class="solution">
-            At just <strong>3.5% participation</strong>, we create leverage NO corporate lobby can defeat.<br>
-            This is FOR THE PEOPLE. Spread by THE PEOPLE. Owned by THE PEOPLE.
-        </div>
-
-        <div class="cta-grid">
-            <div class="cta-card">
-                <h3>📹 FOR ORGANIZERS</h3>
-                <p>Union leaders, community organizers, politicians</p>
-                <a href="#video" class="btn">Watch Video Invitation</a>
-            </div>
-            <div class="cta-card">
-                <h3>🤝 FOR EVERYONE</h3>
-                <p>Join the movement to hit 3.5%</p>
-                <a href="#join" class="btn btn-secondary">Join Movement</a>
-            </div>
-            <div class="cta-card">
-                <h3>📄 LEARN MORE</h3>
-                <p>Download complete framework</p>
-                <a href="#resources" class="btn btn-outline">Download Plan</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Video Section -->
-<section id="video" class="video-section">
-    <div class="container">
-        <h2>A Message to Leaders Who Want to Give Constituents Something Real</h2>
-        <p class="section-subtitle" style="color: white;">
-            Union Leaders • Community Organizers • Politicians • Movement Leaders
-        </p>
-
-        <div class="video-container">
-            <div class="video-placeholder">
-                <h3>🎥 Video Invitation Coming Soon</h3>
-                <p style="font-size: 1.1rem; margin-top: 1rem;">
-                    A personal message from Will Price explaining:<br><br>
-                    • Why PHIERS is the comprehensive solution we need<br>
-                    • How 3.5% participation creates unstoppable leverage<br>
-                    • Why we need YOUR networks to make this happen<br>
-                    • What you can do RIGHT NOW to help
-                </p>
-            </div>
-
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                <strong>Hi, I'm Will Price.</strong> For 11+ years, I've been building PHIERS as the solution 
-                to healthcare extraction. But with Project 2025 breaking 9 systems, PHIERS became the 
-                comprehensive response we need.
+        <div class="section">
+            <p style="font-size: 1.2em; line-height: 1.9; margin-bottom: 20px;">
+                <strong>Project 2025 and DOGE broke 9 systems.</strong><br>
+                Democrats have no solution with teeth.<br>
+                Republicans have concepts on napkins.<br>
+                <strong>We have the mathematical weapon to fix ALL of it.</strong>
             </p>
 
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                I can solve problems intellectually. But I can't mobilize millions. That's YOUR skill.
-            </p>
-
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                <strong>My ask:</strong> Verify the math. Review the plan. If I'm wrong, tell me where.
-            </p>
-
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                But if the math works (spoiler: it does), then I need YOU to spread this to your networks.
-            </p>
-
-            <div class="video-cta">
-                <a href="#contact" class="btn">Request Briefing</a>
-                <a href="#resources" class="btn btn-secondary">Download Your Custom Analysis</a>
+            <div class="math-highlight">
+                <p><strong>PHIERS delivers $2.73 TRILLION in savings<br>while solving 9 interconnected crises:</strong></p>
+                <p style="margin-top: 15px; font-size: 1.1em;">Healthcare • Jobs • SNAP • Economy • Justice • Political Power • Community • Crisis Response • Infrastructure</p>
+                <p style="margin-top: 20px;"><strong>At just 3.5% participation, we create leverage NO corporate lobby can defeat.</strong></p>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Validation Section -->
-<section class="validation">
-    <div class="container">
-        <h2>Why This Works — The Models Are Already Proven</h2>
-        <p class="section-subtitle">
-            The validation isn't endorsements—it's that our documented methodologies 
-            from over a decade ago are now being used successfully.
-        </p>
+        <!-- FOR LEADERS -->
+        <div class="section">
+            <h2>A Message to Movement Leaders & Organizers</h2>
+            
+            <p style="font-size: 1.05em; margin-bottom: 20px;">
+                <strong>Union Leaders • Community Organizers • Politicians • Coalition Partners</strong>
+            </p>
 
-        <div class="validation-grid">
-            <div class="validation-item">
-                <h3>✓ Telehealth Platforms Operating at $600/Year</h3>
-                <p>
-                    Companies using methodologies we documented over a decade ago are successfully 
-                    providing comprehensive coverage at the price point we predicted. Model validated.
+            <div class="engine-box">
+                <p style="font-size: 1.05em; line-height: 1.9;">
+                    I'm Will Price. For 11+ years, I've been building PHIERS as the solution to healthcare extraction. But with Project 2025 breaking 9 systems, PHIERS became the comprehensive response we need.
                 </p>
-            </div>
-
-            <div class="validation-item">
-                <h3>✓ Mark Cuban Cost Plus Proves Rx Savings</h3>
-                <p>
-                    80-90% prescription savings through cooperative purchasing. Exactly what we 
-                    described years ago. Math confirmed.
+                <p style="font-size: 1.05em; line-height: 1.9; margin-top: 15px;">
+                    I can solve problems intellectually. But I can't mobilize millions. <strong>That's YOUR skill.</strong>
                 </p>
-            </div>
-
-            <div class="validation-item">
-                <h3>✓ AI Analysis Validates Mathematical Soundness</h3>
-                <p>
-                    Advanced AI has analyzed our plan: Mathematically sound, politically viable, 
-                    implementation-ready.
-                </p>
-            </div>
-
-            <div class="validation-item">
-                <h3>✓ CMS Payment Structure Exists</h3>
-                <p>
-                    Accountable Care Organizations already receive payments for cost reductions. 
-                    Precedent established. Path proven.
+                <p style="font-size: 1.05em; line-height: 1.9; margin-top: 15px;">
+                    <strong>My ask:</strong> Verify the math. Review the plan. If I'm wrong, tell me where. But if the math works (spoiler: it does), then I need YOU to spread this to your networks.
                 </p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">The Concepts Work. The Math Is Solid. The Models Are Proven.</h3>
-            <p style="font-size: 1.2rem;">
-                What we need now: POLITICAL LEVERAGE to implement at scale.<br>
-                That means 3.5% of Americans saying "I'm in."
-            </p>
-            <p style="font-size: 1.3rem; font-weight: bold; margin-top: 1rem;">
-                WITH YOUR HELP, we can get there.
-            </p>
-        </div>
-    </div>
-</section>
+        <!-- WHY NOW -->
+        <div class="section">
+            <h2>Why NOW? Three Crises Create The Opening</h2>
 
-<!-- People vs Elites -->
-<section class="people-power">
-    <div class="container">
-        <h2>This Is THE PEOPLE'S Movement</h2>
-        <p class="section-subtitle">
-            Not another elite solution. Cooperative economics that gives power back to the people.
-        </p>
-
-        <div class="comparison-grid">
-            <div class="comparison-card not">
-                <h3>NOT Another Elite Solution:</h3>
-                <ul>
-                    <li>Corporate healthcare (they extract wealth)</li>
-                    <li>Government program (requires divided Congress cooperation)</li>
-                    <li>Charity model (unsustainable)</li>
-                    <li>Top-down mandate (people have no say)</li>
-                </ul>
+            <div class="crisis-box">
+                <h3 style="color: #c0392b; margin-bottom: 10px;">🔴 December 5, 2025: DOGE Destroys 1 Million Jobs</h3>
+                <p>Largest federal workforce reduction in 40+ years. Contractors devastated. Your constituents/members need solutions NOW, not someday.</p>
             </div>
 
-            <div class="comparison-card is">
-                <h3>This IS Cooperative Economics:</h3>
-                <ul>
-                    <li>Members own it (not shareholders)</li>
-                    <li>States can implement (don't need Congress)</li>
-                    <li>Self-funding (no begging for resources)</li>
-                    <li>Bottom-up power (people control it)</li>
-                </ul>
+            <div class="crisis-box">
+                <h3 style="color: #c0392b; margin-bottom: 10px;">🔴 Project 2025: Breaks 9 Systems Simultaneously</h3>
+                <p>Healthcare, economy, justice, community—all under coordinated attack. Traditional piecemeal responses are inadequate. Need comprehensive solution.</p>
+            </div>
+
+            <div class="crisis-box">
+                <h3 style="color: #c0392b; margin-bottom: 10px;">🔴 Resistance Movements Lack Economic Weapon</h3>
+                <p>Organizing resistance without economic backing = empty threats. PHIERS provides the mathematical leverage movements need to win.</p>
+            </div>
+
+            <p style="font-size: 1.05em; margin-top: 30px; line-height: 1.9;">
+                <strong>Movements always win when they have:</strong> Clear demands (not just resistance) • Economic backing (not just moral arguments) • Constituent pressure (not just DC rallies) • Mathematical superiority (not just passion)
+            </p>
+            <p style="font-size: 1.05em; margin-top: 15px;"><strong>PHIERS provides all four.</strong></p>
+        </div>
+
+        <!-- THE PROOF -->
+        <div class="section">
+            <h2>The Models Are Already Proven</h2>
+
+            <p style="font-size: 1.05em; margin-bottom: 20px;">
+                The validation isn't endorsements—it's that our documented methodologies from over a decade ago are now being used successfully.
+            </p>
+
+            <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #27ae60;">
+                <strong style="color: #27ae60;">✓ Telehealth Platforms Operating at $600/Year</strong><br>
+                Companies using methodologies we documented are successfully providing comprehensive coverage at the price point we predicted. Model validated.
+            </div>
+
+            <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #27ae60;">
+                <strong style="color: #27ae60;">✓ Mark Cuban Cost Plus Proves Rx Savings</strong><br>
+                80-90% prescription savings through cooperative purchasing. Exactly what we described years ago. Math confirmed.
+            </div>
+
+            <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #27ae60;">
+                <strong style="color: #27ae60;">✓ AI Analysis Validates Mathematical Soundness</strong><br>
+                Advanced AI has analyzed our plan: Mathematically sound, politically viable, implementation-ready.
+            </div>
+
+            <div style="background: white; padding: 25px; border-radius: 8px; border-left: 4px solid #27ae60;">
+                <strong style="color: #27ae60;">✓ CMS Payment Structure Exists</strong><br>
+                Accountable Care Organizations already receive payments for cost reductions. Precedent established. Path proven.
             </div>
         </div>
 
-        <div class="leverage-box">
-            <h3>When 3.5% Participate, We Create Leverage NO Corporate Lobby Can Defeat</h3>
-            <p style="font-size: 1.2rem; margin: 1rem 0;">
-                <strong>230:1</strong> advantage over pharmaceutical lobbying<br>
-                <strong>$1.95 BILLION</strong> economic impact per congressional district
+        <!-- THE ENGINE -->
+        <div class="section">
+            <h2>The Engine: Healthcare Savings Fund Everything</h2>
+
+            <p style="font-size: 1.05em; margin-bottom: 20px;">
+                Why healthcare first? Because healthcare extraction generates the SAVINGS that fund all 8 other solutions.
             </p>
-            <p style="font-size: 1.1rem;">
-                THAT'S how the people take power back. Not by asking elites for permission.<br>
-                By building mathematical superiority they can't ignore.
-            </p>
-        </div>
-    </div>
-</section>
 
-<!-- The Engine -->
-<section class="engine">
-    <div class="container">
-        <h2>THE ENGINE: Healthcare Savings Fund Everything</h2>
-        <p class="section-subtitle">
-            Why healthcare first? Because healthcare extraction generates the SAVINGS 
-            that fund all 8 other solutions.
-        </p>
-
-        <div class="engine-visual">
-            <div class="engine-flow">
-                <span>Healthcare: <strong>$8,500/year</strong></span>
-                <span class="arrow">→</span>
-                <span><strong>$600/year</strong></span>
-                <span class="arrow">→</span>
-                <span><strong>FREE at 3.5%</strong></span>
-            </div>
-
-            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.7); border-radius: 10px;">
-                <p style="font-size: 1.2rem; font-weight: bold; color: #2e7d32;">
-                    This saves $2.73 TRILLION nationally
+            <div class="engine-box">
+                <p style="text-align: center; font-size: 1.2em;">
+                    <strong>Healthcare: $8,500/year → $600/year → FREE at 3.5%</strong><br>
+                    <span style="font-size: 1.3em; font-weight: bold; color: #27ae60;">This saves $2.73 TRILLION nationally</span>
                 </p>
-                <p style="font-size: 1.1rem; margin-top: 0.5rem;">
-                    Which funds ↓
+
+                <p style="margin-top: 25px; font-size: 1.05em;">
+                    <strong>Which funds:</strong><br>
+                    Jobs (2M positions) • SNAP (Automatic 80hrs) • Economic Justice (Black Wall Streets)<br>
+                    Political Leverage (Constituent Power) • Community (Mutual aid networks) • Crisis Response (Worker transition)<br>
+                    Legal Protection (Civic law centers) • Infrastructure (Shared services)
+                </p>
+
+                <p style="margin-top: 20px; text-align: center; font-weight: bold; color: #27ae60;">
+                    One Solution. Nine Problems Solved. Zero New Taxes.
                 </p>
             </div>
+        </div>
 
-            <div class="solutions-grid">
-                <div class="solution-pill">Jobs<br>(2M positions)</div>
-                <div class="solution-pill">SNAP<br>(Automatic 80hrs)</div>
-                <div class="solution-pill">Economic Justice<br>(Black Wall Streets)</div>
-                <div class="solution-pill">Political Leverage<br>(Fight Club weapon)</div>
-                <div class="solution-pill">Community<br>(Mutual aid networks)</div>
-                <div class="solution-pill">Crisis Response<br>(Worker transition)</div>
-                <div class="solution-pill">Legal Protection<br>(Civic law centers)</div>
-                <div class="solution-pill">Infrastructure<br>(Shared services)</div>
+        <!-- WHO WE'RE INVITING -->
+        <div class="section">
+            <h2>For Movement Leaders & Organizers</h2>
+
+            <p style="margin-bottom: 20px;">We're not competing. We're providing the weapon YOU need.</p>
+
+            <div class="roles-grid">
+                <div class="role-box">
+                    <h3>🇺 Union Leaders</h3>
+                    <p>Your members need healthcare, job security, and political power. PHIERS delivers all three while strengthening unions.</p>
+                    <a href="/cdn-cgi/l/email-protection#8dfae4e1e1cdfde5e4e8fffea3e2ffeab2fef8efe7e8eef9b0d8e3e4e2e3adddecfff9e3e8fffee5e4fdadcfffe4e8ebe4e3ea" class="cta-button">Request Briefing</a>
+                </div>
+
+                <div class="role-box">
+                    <h3>🤝 Community Organizers</h3>
+                    <p>Your networks can mobilize 3.5% in key areas. We provide the solution worth organizing around.</p>
+                    <a href="/cdn-cgi/l/email-protection#295e404545695941404c5b5a07465b4e165a5c4b434c4a5d14665b4e4847405340474e097b4c5a465c5b4a4c5a" class="cta-button">Get Materials</a>
+                </div>
+
+                <div class="role-box">
+                    <h3>🏛️ Politicians</h3>
+                    <p>Your constituents need tangible relief, not just resistance. PHIERS gives you something real to champion.</p>
+                    <a href="/cdn-cgi/l/email-protection#3f485653537f4f57565a4d4c11504d58004c4a5d555a5c4b027b564c4b4d565c4b1f7e515e53464c564c" class="cta-button">Request Analysis</a>
+                </div>
+
+                <div class="role-box">
+                    <h3>⚡ Movement Partners</h3>
+                    <p>(Indivisible, civic law centers, mutual aid networks...) PHIERS strengthens YOUR fight with economic backing.</p>
+                    <a href="/cdn-cgi/l/email-protection#186f717474586870717d6a6b36776a7f276b6d7a727d7b6c255b777974716c7177763848796a6c767d6a6b707168" class="cta-button">Join Coalition</a>
+                </div>
             </div>
 
-            <p style="font-size: 1.3rem; margin-top: 2rem; font-weight: bold; color: #1b5e20;">
-                One Solution. Nine Problems Solved. Zero New Taxes.
+            <p style="font-size: 1.05em; margin-top: 30px; text-align: center; font-weight: bold;">
+                Your Movement Has the Organizing Capacity.<br>
+                PHIERS Has the Mathematical Leverage.<br>
+                <span style="color: #27ae60;">Together = Unstoppable.</span>
             </p>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="#resources" class="btn">See How All 9 Connect →</a>
-        </div>
-    </div>
-</section>
-
-<!-- For Leaders -->
-<section class="for-leaders">
-    <div class="container">
-        <h2>For Movement Leaders & Organizers</h2>
-        <p class="section-subtitle">
-            We're not competing. We're providing the weapon YOU need.
-        </p>
-
-        <div class="leader-cards">
-            <div class="leader-card">
-                <h3>If You're a Union Leader:</h3>
-                <p>
-                    Your members need healthcare, job security, and political power. 
-                    PHIERS delivers all three while strengthening unions.
-                </p>
-                <a href="#contact" class="btn">Request Union Partnership Briefing</a>
-            </div>
-
-            <div class="leader-card">
-                <h3>If You're a Community Organizer:</h3>
-                <p>
-                    Your networks can mobilize 3.5% in key areas. We provide the 
-                    solution worth organizing around.
-                </p>
-                <a href="#contact" class="btn">Request Organizing Resources</a>
-            </div>
-
-            <div class="leader-card">
-                <h3>If You're a Politician:</h3>
-                <p>
-                    Your constituents need tangible relief, not just resistance. 
-                    PHIERS gives you something real to champion.
-                </p>
-                <a href="#contact" class="btn">Request Custom District Analysis</a>
-            </div>
-
-            <div class="leader-card">
-                <h3>If You're Part of a Movement:</h3>
-                <p>
-                    (No Kings, Indivisible, civic law centers, mutual aid networks...) 
-                    PHIERS strengthens YOUR fight with economic backing.
-                </p>
-                <a href="#contact" class="btn">Request Coalition Briefing</a>
-            </div>
-        </div>
-
-        <div class="coalition-box">
-            <h3>Your Movement Has the Organizing Capacity.<br>
-            PHIERS Has the Mathematical Leverage.<br>
-            Together = Unstoppable.</h3>
-            <p style="font-size: 1.1rem; margin: 1.5rem 0;">
-                Movements we're inviting to PHIERStorm Coalition:<br>
-                <strong>No Kings • Indivisible • Civic Law Centers • Labor Unions • 
-                Community Organizing Networks • Mutual Aid Groups</strong>
+        <!-- CTA -->
+        <div class="primary-cta">
+            <h2>Ready to Verify & Deploy?</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;">
+                Download the comprehensive framework. Review the math. Verify the models. Then bring it to your networks.
             </p>
-            <a href="#contact" class="btn">Join PHIERStorm Coalition</a>
-        </div>
-    </div>
-</section>
+            <a href="https://phiersale.github.io/PHIERS-FAQ/" class="cta-button">📖 FAQ & Full Details</a>
+            <a href="https://phiersale.github.io/PHIERS-Concept/" class="cta-button">📚 Main Concept</a>
+            <a href="https://phiersale.github.io/PHIERStorm/" class="cta-button">⚡ Grassroots Organizing</a>
+            <a href="https://www.gofundme.com/f/homeless-but-hopeful-affordable-healthcare-good-jobs-ubi" class="cta-button">💰 Support Launch</a>
+            <a href="https://phiersale.github.io/Join_the_Team/" class="cta-button">🤝 Join The Movement</a>
 
-<!-- Urgency -->
-<section class="urgency">
-    <div class="container">
-        <h2>Why NOW? The Moment Demands Action</h2>
-        <p class="section-subtitle" style="color: white;">
-            Three simultaneous crises create the opening for bold solutions.
-        </p>
-
-        <div class="crisis-cards">
-            <div class="crisis-card">
-                <h3>🔴 December 5, 2025: DOGE Destroys 1 Million Jobs</h3>
-                <p>
-                    Largest federal workforce reduction in 40+ years. Contractors devastated. 
-                    Your constituents/members need solutions NOW, not someday.
-                </p>
-            </div>
-
-            <div class="crisis-card">
-                <h3>🔴 Project 2025: Breaks 9 Systems Simultaneously</h3>
-                <p>
-                    Healthcare, economy, justice, community—all under coordinated attack. 
-                    Traditional piecemeal responses are inadequate. Need comprehensive solution.
-                </p>
-            </div>
-
-            <div class="crisis-card">
-                <h3>🔴 Fight Club Formed But Lacks Leverage</h3>
-                <p>
-                    Schumer, Van Hollen organizing resistance without economic weapon. 
-                    Making demands without constituent backing = empty threats.
-                </p>
-            </div>
-        </div>
-
-        <div class="response-box">
-            <h3>Movements Always Win When They Have:</h3>
-            <ul>
-                <li>Clear demands (not just resistance)</li>
-                <li>Economic backing (not just moral arguments)</li>
-                <li>Constituent pressure (not just DC rallies)</li>
-                <li>Mathematical superiority (not just passion)</li>
-            </ul>
-            <p style="font-size: 1.3rem; margin-top: 1.5rem; font-weight: bold;">
-                PHIERS provides all four.
+            <p style="margin-top: 30px; font-weight: bold; color: white; font-size: 1.1em;">
+                Together, we Make America Better and Healthier (MABAH)
             </p>
         </div>
 
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.2); border-radius: 15px; backdrop-filter: blur(10px);">
-            <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem;">
-                This is the moment. Affordability validated. Models proven. AI confirms soundness.<br>
-                Political crisis demands bold action.
+        <!-- RESOURCES -->
+        <div class="section">
+            <h2>Comprehensive Resources</h2>
+
+            <div class="resources-grid">
+                <div class="resource-box">
+                    <h3>📖 Complete Understanding</h3>
+                    <ul>
+                        <li>FAQ: Every Question Answered</li>
+                        <li>All 9 Paths: Full Interconnections</li>
+                        <li>How It Works: Step-by-Step</li>
+                        <li>Current Crisis: Why Now Matters</li>
+                    </ul>
+                </div>
+
+                <div class="resource-box">
+                    <h3>📄 For Decision Makers</h3>
+                    <ul>
+                        <li>National Framework White Paper</li>
+                        <li>Maryland State Plan</li>
+                        <li>California State Plan</li>
+                        <li>NYC Plan</li>
+                    </ul>
+                </div>
+
+                <div class="resource-box">
+                    <h3>🛠️ For Organizers</h3>
+                    <ul>
+                        <li>Constituent Communication Templates</li>
+                        <li>Petition & Survey Tools</li>
+                        <li>Social Media Content Kit</li>
+                        <li>Town Hall Talking Points</li>
+                    </ul>
+                </div>
+
+                <div class="resource-box">
+                    <h3>🤝 For Coalition Partners</h3>
+                    <ul>
+                        <li>Movement Partnership Frameworks</li>
+                        <li>Custom Briefing Materials</li>
+                        <li>District-Specific Analysis</li>
+                        <li>Implementation Roadmaps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <p style="font-size: 1.2em; font-weight: bold; margin: 30px 0;">
+                The Elites Won't Save Us.<br>
+                <span style="color: #27ae60;">We Save Ourselves.</span>
             </p>
-            <p style="font-size: 1.2rem;">
-                We need 3.5% to say YES. With movement coalition, that's MONTHS not YEARS.
-            </p>
-            <p style="font-size: 1.5rem; font-weight: bold; margin-top: 1rem;">
-                TIME TO LAUNCH.
+            <p style="font-size: 1.05em; line-height: 1.9;">
+                3.5% participation = $2.73 TRILLION leverage = Solutions to 9 crises = Power back to the people
             </p>
         </div>
     </div>
-</section>
 
-<!-- Resources -->
-<section id="resources" class="resources">
-    <div class="container">
-        <h2>Comprehensive Resources</h2>
-        <p class="section-subtitle">
-            We're the authoritative source. Everything you need to understand, 
-            evaluate, and implement PHIERS.
-        </p>
-
-        <div class="resource-categories">
-            <div class="resource-category">
-                <h3>📖 Complete Understanding</h3>
-                <ul class="resource-list">
-                    <li><a href="#">FAQ: Every Question Answered</a></li>
-                    <li><a href="#">All 9 Paths: Full Interconnections</a></li>
-                    <li><a href="#">Current News: Headlines Prove Relevance</a></li>
-                    <li><a href="#">How It Works: Step-by-Step</a></li>
-                </ul>
-            </div>
-
-            <div class="resource-category">
-                <h3>📄 For Decision Makers</h3>
-                <ul class="resource-list">
-                    <li><a href="#">National Framework White Paper</a></li>
-                    <li><a href="#">Maryland State Plan ($17.4B savings)</a></li>
-                    <li><a href="#">California State Plan ($110B savings)</a></li>
-                    <li><a href="#">NYC Plan ($38B savings)</a></li>
-                    <li><a href="#">Request Custom Analysis for Your Jurisdiction</a></li>
-                </ul>
-            </div>
-
-            <div class="resource-category">
-                <h3>🛠️ For Organizers</h3>
-                <ul class="resource-list">
-                    <li><a href="#">Constituent Communication Templates</a></li>
-                    <li><a href="#">Petition/Survey Tools</a></li>
-                    <li><a href="#">Social Media Content Kit</a></li>
-                    <li><a href="#">Town Hall Talking Points</a></li>
-                    <li><a href="#">Movement Partnership Frameworks</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 15px;">
-            <h3 style="color: #0d47a1; margin-bottom: 1rem;">Need Something Custom?</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-                We'll create tailored white papers, district analyses, or partnership 
-                frameworks specific to your needs.
-            </p>
-            <a href="#contact" class="btn">Request Custom Materials</a>
-        </div>
-    </div>
-</section>
-
-<!-- Final CTA -->
-<section id="join" class="final-cta">
-    <div class="container">
-        <h2>The Elites Won't Save Us. We Save Ourselves.</h2>
-        <p class="section-subtitle" style="color: white; font-size: 1.3rem;">
-            3.5% participation = $2.73 TRILLION leverage = Solutions to 9 crises = Power back to the people
-        </p>
-
-        <div class="final-cta-grid">
-            <div class="final-cta-card">
-                <h3>Are You a Multiplier?</h3>
-                <p>Organizer, leader, politician who can mobilize networks</p>
-                <a href="#contact" class="btn">Request Briefing</a>
-                <a href="#contact" class="btn btn-secondary" style="margin-top: 10px;">Get Custom Analysis</a>
-            </div>
-
-            <div class="final-cta-card">
-                <h3>Ready to Join?</h3>
-                <p>Everyone who wants to be part of the solution</p>
-                <a href="#contact" class="btn">Join Movement</a>
-                <a href="#contact" class="btn btn-secondary" style="margin-top: 10px;">Sign Petition</a>
-            </div>
-
-            <div class="final-cta-card">
-                <h3>Want to Go Deeper?</h3>
-                <p>Researchers, press, skeptics who want full details</p>
-                <a href="#resources" class="btn">Download Complete Plan</a>
-                <a href="#resources" class="btn btn-secondary" style="margin-top: 10px;">Explore All 9 Paths</a>
-            </div>
-        </div>
-
-        <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
-            <p style="font-size: 1.5rem; font-weight: bold;">
-                Let's MABAH. Together.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Footer -->
-<footer id="contact">
-    <div class="container">
-        <h3 style="margin-bottom: 1rem;">Ready to Get Started?</h3>
-        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-            <strong>Will Price</strong><br>
-            Email: <a href="mailto:wdprice@phiers.org">wdprice@phiers.org</a><br>
-            Phone: <a href="tel:+13013907657">(301) 390-7657</a>
-        </p>
-        <p style="margin-top: 2rem; color: #888; font-size: 0.9rem;">
-            For Press Inquiries | Partnership Opportunities | Technical Questions
-        </p>
-        <p style="margin-top: 2rem; color: #666; font-size: 0.85rem;">
-            © 2025 PHIERS.org | December 5, 2025 | Making America Better And Healthier
-        </p>
-    </div>
-</footer>
-
-</body>
-</html>
+    <div class="footer">
+        <p><strong>MABAH Movement: Making America Better And Healthier</strong></p>
+        <p style="margin-top: 15px;">
+            <a href="https://phiersale.github.io/PHIERS-Concept/">PHIERS Concept</a> | 
+            <a href="https://phiersale.github.io/PHIERStorm/">PHIERStorm</a> | 
+            <a href="https://phiersale.github.io/Join_the_Team/">Join Us</a> | 
+            <a href="/cdn-cgi/l/email-protection#f780
